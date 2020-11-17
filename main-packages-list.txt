@@ -2,3 +2,10 @@ crudini
 iproute
 psmisc
 sqlite
+python3-devel
+python3-pip 
+gcc
+git
+httpd
+python3-mod_wsgi.x86_64
+memcached

@@ -71,4 +71,5 @@ fi
 
 ironic-inspector-dbsync --config-file /etc/ironic-inspector/ironic-inspector.conf upgrade
 
-exec /usr/local/bin/ironic-inspector $CONFIG_OPTIONS
+#exec /usr/local/bin/ironic-inspector $CONFIG_OPTIONS
+# exec /usr/sbin/httpd -DFOREGROUND
