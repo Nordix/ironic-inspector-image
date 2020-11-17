@@ -38,6 +38,7 @@ driver = noop
 
 [service_catalog]
 auth_type = none
+endpoint_override = {{ env.IRONIC_IP }}:5049
 endpoint_override = {{ env.IRONIC_INSPECTOR_BASE_URL }}
 
 {% if env.IRONIC_INSPECTOR_TLS_SETUP == "true" %}

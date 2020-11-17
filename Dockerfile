@@ -23,7 +23,8 @@ COPY ./ironic-common.sh /bin/ironic-common.sh
 COPY ./ironic-inspector-common.sh /bin/ironic-inspector-common.sh
 COPY ./runironic-inspector-api.sh /bin/runironic-inspector-api
 COPY ./runironic-inspector-conductor.sh /bin/runironic-inspector-conductor
-COPY ./inspector-api-apache.conf /etc/httpd/conf.d/inspector.conf
+COPY ./inspector-api-apache.conf /etc/httpd/conf.d/inspector-api.conf
+COPY ./inspector-apache.conf /etc/httpd/conf.d/inspector.conf
 HEALTHCHECK CMD /bin/runhealthcheck
 RUN chmod +x /bin/runironic-inspector /bin/runironic-inspector-api /bin/runironic-inspector-conductor 
 RUN useradd inspector # For apache server to run inspetor api as a daemon
