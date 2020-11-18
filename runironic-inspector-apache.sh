@@ -71,5 +71,7 @@ fi
 
 ironic-inspector-dbsync --config-file /etc/ironic-inspector/ironic-inspector.conf upgrade
 
-exec /usr/sbin/httpd -DFOREGROUND &
+# Only for testing
+crudini --set $CONFIG service_catalog endpoint_override "http://172.22.0.2:5049"
+/usr/sbin/httpd 
 exec /usr/local/bin/ironic-inspector $CONFIG_OPTIONS
