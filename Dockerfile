@@ -17,7 +17,11 @@ RUN dnf install -y python3 python3-requests && \
     rm -rf /var/cache/{yum,dnf}/*
 
 COPY ./inspector.conf.j2 /etc/ironic-inspector/ironic-inspector.conf.j2
-COPY ./runironic-inspector.sh /bin/runironic-inspector
+# For non-standalone version
+# COPY ./runironic-inspector.sh /bin/runironic-inspector
+#
+# For standalone version with apache revese proxy
+COPY ./runironic-inspector-apache.sh /bin/runironic-inspector
 COPY ./runhealthcheck.sh /bin/runhealthcheck
 COPY ./ironic-common.sh /bin/ironic-common.sh
 COPY ./ironic-inspector-common.sh /bin/ironic-inspector-common.sh
