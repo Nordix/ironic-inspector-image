@@ -1,5 +1,4 @@
 crudini
 iproute
-openstack-ironic-inspector
 psmisc
 sqlite
