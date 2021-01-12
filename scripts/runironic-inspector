@@ -66,7 +66,7 @@ if [ -n "${HTTP_BASIC_HTPASSWD}" ]; then
 fi
 
 # Configure auth for ironic client
-CONFIG_OPTIONS="--config-file /etc/ironic-inspector/inspector-dist.conf --config-file ${CONFIG}"
+CONFIG_OPTIONS="--config-file ${CONFIG}"
 auth_config_file="/auth/ironic/auth-config"
 if [ -f ${auth_config_file} ]; then
     CONFIG_OPTIONS+=" --config-file ${auth_config_file}"
@@ -74,4 +74,4 @@ fi
 
 ironic-inspector-dbsync --config-file /etc/ironic-inspector/ironic-inspector.conf upgrade
 
-exec /usr/bin/ironic-inspector $CONFIG_OPTIONS
+exec /usr/local/bin/ironic-inspector $CONFIG_OPTIONS
