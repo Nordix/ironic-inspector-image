@@ -148,9 +148,9 @@ def trampoline(fd, read=None, write=None, timeout=None,
     if timeout is not None:
         print("THIS IS TIMEOUT: ", timeout, flush=True)
         print("FDDDDDDDDDDDDDDDDDDDDDDDDDD: ", fd, flush=True)
-        print("EEEEEEEEEEEEEEEEEEEEEXC: ", exc, flush=True)
         def _timeout(exc):
             # This is only useful to insert debugging
+            print("EEEEEEEEEEEEEEEEEEEEEXC: ", exc, flush=True)
             current.throw(exc)
         t = hub.schedule_call_global(timeout, _timeout, timeout_exc)
 
