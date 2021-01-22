@@ -7,7 +7,7 @@ curl https://raw.githubusercontent.com/openstack/tripleo-repos/master/tripleo_re
 dnf upgrade -y
 dnf install -y $(cat /tmp/main-packages-list.txt)
 pip3 install wheel
-pip3 install git+git://github.com/namnx228/ironic-inspector.git#egg=ironic-inspector
+pip3 install git+git://github.com/namnx228/ironic-inspector.git@uplift-eventlet-version#egg=ironic-inspector
 mkdir -p /var/lib/ironic-inspector
 sqlite3 /var/lib/ironic-inspector/ironic-inspector.db "pragma journal_mode=wal"
 dnf remove -y sqlite
