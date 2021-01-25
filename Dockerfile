@@ -12,6 +12,7 @@ COPY ironic-inspector.conf.j2 /etc/ironic-inspector/
 COPY scripts/ /bin/
 
 COPY __init__.py /usr/lib/python3.6/site-packages/eventlet/hubs/__init__.py
+COPY wsgi.py /usr/lib/python3.6/site-packages/eventlet/wsgi.py
 
 HEALTHCHECK CMD /bin/runhealthcheck
 
